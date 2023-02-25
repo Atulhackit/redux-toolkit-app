@@ -1,0 +1,34 @@
+@import "../../common/colors.scss";
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 0.1em 1em;
+  .headerLeft {
+    font-size: 1.5em;
+    color: $font-primary;
+    font-weight: 500;
+  }
+  .headerRight {
+    .userDetails {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      .profilePic {
+        border-radius: 1.6em;
+        background-color: $font-secondary;
+        font-size: 1.2em;
+        color: $font-primary;
+        font-weight: 500;
+        padding: 0.7em 1em;
+      }
+      span {
+        font-size: 1em;
+        color: $font-primary;
+        font-weight: 500;
+      }
+    }
+  }
+}

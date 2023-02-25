@@ -1,0 +1,16 @@
+@import "../../common/colors.scss";
+
+.footerContainer {
+  position: absolute;
+  bottom: 0;
+  background-color: $primary-color;
+  width: 100%;
+  .footerContent {
+    p {
+      font-size: 1em;
+      font-weight: 400;
+      color: $font-primary;
+      text-align: center;
+    }
+  }
+}
