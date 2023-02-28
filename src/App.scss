@@ -1,3 +1,4 @@
+@import "./common//colors.scss";
 .App {
   text-align: center;
 }
@@ -23,7 +24,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.container {
+  background-color: $secondary-color;
+}
 .App-link {
   color: #61dafb;
 }

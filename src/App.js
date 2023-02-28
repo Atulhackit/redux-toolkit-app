@@ -9,7 +9,9 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <RouterInformation />
+      <div className="container">
+        <RouterInformation />
+      </div>
       <Footer />
     </Fragment>
   );
