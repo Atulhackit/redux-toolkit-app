@@ -5,13 +5,13 @@ import MovieCard from "../movieCard/MovieCard";
 import "./MovieListing.scss";
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
-  console.log(movies);
+  // console.log(movies);
 
   let renderMovies = "";
   renderMovies =
     movies.Response === "True" ? (
       movies.Search.map((movie, index) => {
-        console.log(movie);
+        // console.log(movie);
         return <MovieCard key={index} data={movie} />;
       })
     ) : (
