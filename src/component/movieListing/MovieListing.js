@@ -1,14 +1,27 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getAllMovies, getAllShows } from "../../features/movies/movieSlice";
+import Slider from "react-slick";
+import {
+  getAllMovies,
+  getAllShows,
+  getSelectedMovieOrShow,
+} from "../../features/movies/movieSlice";
 import MovieCard from "../movieCard/MovieCard";
 import "./MovieListing.scss";
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
+  const data = useSelector(getSelectedMovieOrShow);
   // console.log(movies);
   // console.log("movies", movies);
-  console.log("shows", shows);
+  let settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 3
+  };
+  console.log("shows", data);
   let renderMovies = "";
   renderMovies =
     movies.Response === "True" ? (
@@ -37,11 +50,11 @@ const MovieListing = () => {
     <div className="movieListWrapper">
       <div className="movieList">
         <h3>Movies</h3>
-        <div className="movieCardContainer">{renderMovies}</div>
+        <div className="movieCardContainer"><Slider {...settings} >{renderMovies}</Slider></div>
       </div>
-      <div className="movieList">
+      <div className="showList">
         <h3>Shows</h3>
-        <div className="movieCardContainer">{renderShows}</div>
+        <div className="showCardContainer">{renderShows}</div>
       </div>
     </div>
   );

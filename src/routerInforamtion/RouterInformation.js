@@ -9,7 +9,7 @@ const RouterInformation = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/movie:imdbID" element={<MovieDetails />} />
+        <Route path="/movie/:imdbID" element={<MovieDetails />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

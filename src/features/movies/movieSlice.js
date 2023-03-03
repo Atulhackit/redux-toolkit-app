@@ -23,14 +23,26 @@ export const fetchAsyncShows = createAsyncThunk(
       .catch((err) => {
         console.log("Error", err);
       });
-    console.log(response.data);
+    return response.data;
+  }
+);
+export const fetchAsyncMovieOrShowsDetails = createAsyncThunk(
+  "movies/fetchAsyncMovieOrShowsDetails",
+  async (Id) => {
+    console.log(Id);
+    const response = await movieApi
+      .get(`?apiKey=${ApiKey}&i=${Id}&plot=full`)
+      .catch((err) => {
+        console.log("Error", err);
+      });
     return response.data;
   }
 );
 
 const initialState = {
   movies: {},
-  Shows: {},
+  shows: {},
+  SelectedMovieOrShowsDetails: {},
 };
 
 const movieSlice = createSlice({
@@ -40,9 +52,9 @@ const movieSlice = createSlice({
     addMovies: (state, { payload }) => {
       state.movies = payload;
     },
-    addShows: (state, { payload }) => {
-      state.Shows = payload;
-    },
+    removeSelectedMovieOrShow:(state)=>{
+      state.SelectedMovieOrShowsDetails={}
+    }
   },
   extraReducers: {
     [fetchAsyncMovies.pending]: () => {
@@ -54,14 +66,20 @@ const movieSlice = createSlice({
     },
     [fetchAsyncShows.fulfilled]: (state, { payload }) => {
       console.log("fetched successfully");
-      return { ...state, Shows: payload };
+      return { ...state, shows: payload };
+    },
+    [fetchAsyncMovieOrShowsDetails.fulfilled]: (state, { payload }) => {
+      console.log("fetched successfully");
+      return { ...state, SelectedMovieOrShowsDetails: payload };
     },
     [fetchAsyncMovies.rejected]: () => {
       console.log("rejected");
     },
   },
 });
-export const { addMovies } = movieSlice.actions;
+export const { addMovies,removeSelectedMovieOrShow } = movieSlice.actions;
 export const getAllMovies = (state) => state.movies.movies;
-export const getAllShows = (state) => state.movies.Shows;
+export const getAllShows = (state) => state.movies.shows;
+export const getSelectedMovieOrShow = (state) =>
+  state.movies.SelectedMovieOrShowsDetails;
 export default movieSlice.reducer;

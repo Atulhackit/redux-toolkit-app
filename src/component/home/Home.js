@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MovieListing from "../movieListing/MovieListing";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   fetchAsyncMovies,
   fetchAsyncShows,
@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchAsyncMovies());
     dispatch(fetchAsyncShows());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="homeContainer">
       <MovieListing />
