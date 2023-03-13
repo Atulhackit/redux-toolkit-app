@@ -32,3 +32,23 @@
     }
   }
 }
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
+.NavLinkList {
+  @include align-center;
+  gap: 2em;
+  list-style: none;
+  height: 100%;
+
+  li {
+    position: relative;
+    height: 100%;
+    @include align-center;
+    color: #fff;
+    :hover {
+      cursor: pointer;
+    }
+  }
+}

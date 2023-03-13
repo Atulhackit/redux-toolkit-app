@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Dashboard",
+    "pathname": "/dashboard",
+    "to": "",
+    "isSubMenu": false
+  },
+  {
+    "name": "Device Management",
+    "pathname": "/deviceManagement",
+    "to": "",
+    "isSubMenu": false
+  },
+  {
+    "name": "User Management",
+    "pathname": "/userManagement",
+    "to": "",
+    "isSubMenu": false
+  },
+  {
+    "name": "UI Elements",
+    "pathname": "/UIElements",
+    "to": "",
+    "isSubMenu": false
+  },
+  {
+    "name": "Sample Menu",
+    "pathname": "",
+    "to": "",
+    "isSubMenu": true,
+    "subMenu": [
+      {
+        "name": "Level-2",
+        "pathname": "",
+        "to": "",
+        "isSubMenu": false
+      },
+      {
+        "name": "Level-21",
+        "pathname": "/",
+        "to": "",
+        "isSubMenu": false
+      },
+      {
+        "name": "Level-22",
+        "pathname": "/",
+        "to": "",
+        "isSubMenu": true,
+        "subMenu": [
+          {
+            "name": "Level-31",
+            "pathname": "/",
+            "to": "",
+            "isSubMenu": false
+          },
+          {
+            "name": "Level-32",
+            "pathname": "/",
+            "to": "",
+            "isSubMenu": false
+          }
+        ]
+      }
+    ]
+  }
+]
