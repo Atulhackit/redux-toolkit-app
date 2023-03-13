@@ -1,25 +1,25 @@
 [
   {
-    "name": "Dashboard",
-    "pathname": "/dashboard",
+    "name": "home",
+    "pathname": "/home",
     "to": "",
     "isSubMenu": false
   },
   {
-    "name": "Device Management",
-    "pathname": "/deviceManagement",
+    "name": "Dabout",
+    "pathname": "/about",
     "to": "",
     "isSubMenu": false
   },
   {
-    "name": "User Management",
-    "pathname": "/userManagement",
+    "name": "details",
+    "pathname": "/details",
     "to": "",
     "isSubMenu": false
   },
   {
-    "name": "UI Elements",
-    "pathname": "/UIElements",
+    "name": "profile",
+    "pathname": "/profile",
     "to": "",
     "isSubMenu": false
   },
